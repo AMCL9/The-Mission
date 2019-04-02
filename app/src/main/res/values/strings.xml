@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">The Mission</string>
+    <string name="first_church_of_god">First Church of God</string>
+    <string name="the_mission">THE MISSION</string>
+    <string name="teens_living_christ">Teens Living for Christ</string>
+    <string name="teens_living_for_christ">Teens Living for Christ</string>
+    <string name="todo">TODO</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="scripture_text">This is the Scripture.</string>
+    <string name="enter">ENTER</string>
+
+</resources>

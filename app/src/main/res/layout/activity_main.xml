@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/fragment_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMissionLogo"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/first_church_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:requiresFadingEdge="horizontal"
+        android:src="@drawable/missionlogo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fcog_splash_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/fcog_splash_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/first_church_splash"
+        android:fontFamily="@font/mostwasted"
+        android:includeFontPadding="true"
+        android:text="@string/first_church_of_god"
+        android:textAlignment="gravity"
+        android:textColor="@color/colorOffWhite"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/teens_living_for_christ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/first_church_splash" />
+
+    <TextView
+        android:id="@+id/teens_living_for_christ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/teens_living_for_christ"
+        android:fontFamily="@font/mostwasted"
+        android:textColor="@color/colorOffWhite"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fcog_splash_text"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

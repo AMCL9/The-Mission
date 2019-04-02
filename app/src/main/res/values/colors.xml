@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorLavender">#F6C9FF</color>
+    <color name="colorLavenderMuted">#80CD9BD1</color>
+    <color name="colorLavenderDark">#3A3436</color>
+    <color name="colorIndigoDark">#2F0136</color>
+    <color name="colorMissionLogo">#474367</color>
+    <color name="colorIndigo">#5F0F6D</color>
+    <color name="colorMustard">#EDFFD34E</color>
+    <color name="colorCanary">#EEF7DFAC</color>
+    <color name="colorGrayNeutral">#777475</color>
+    <color name="colorOffWhite">#E6E6E6</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+</resources>
