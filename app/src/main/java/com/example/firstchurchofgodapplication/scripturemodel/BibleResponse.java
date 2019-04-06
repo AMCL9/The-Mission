@@ -1,55 +1,81 @@
 package com.example.firstchurchofgodapplication.scripturemodel;
 
-import java.util.List;
-
 public class BibleResponse {
-    private List<Book> books;
-    private String type;
-    private String version;
-    private String direction;
+    private String chapter;
 
-    public BibleResponse(List<Book> book, String type, String version, String direction) {
-        this.books = book;
-        this.type = type;
-        this.version = version;
-        this.direction = direction;
+    private String verse;
+
+    private String text;
+
+    private String[] titles;
+
+    private String bookname;
+
+    private String title;
+
+    public String getChapter ()
+    {
+        return chapter;
     }
 
-    public List<Book> getBook() {
-        return books;
+    public void setChapter (String chapter)
+    {
+        this.chapter = chapter;
     }
 
-    public void setBook(List<Book> book) {
-        this.books = book;
+    public String getVerse ()
+    {
+        return verse;
     }
 
-    public String getType() {
-        return type;
+    public void setVerse (String verse)
+    {
+        this.verse = verse;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public String getText ()
+    {
+        return text;
     }
 
-    public String getVersion() {
-        return version;
+    public void setText (String text)
+    {
+        this.text = text;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public String[] getTitles ()
+    {
+        return titles;
     }
 
-    public String getDirection() {
-        return direction;
+    public void setTitles (String[] titles)
+    {
+        this.titles = titles;
     }
 
-    public void setDirection(String direction) {
-        this.direction = direction;
+    public String getBookname ()
+    {
+        return bookname;
     }
 
+    public void setBookname (String bookname)
+    {
+        this.bookname = bookname;
+    }
+
+    public String getTitle ()
+    {
+        return title;
+    }
+
+    public void setTitle (String title)
+    {
+        this.title = title;
+    }
 
     @Override
-    public String toString() {
-        return super.toString();
+    public String toString()
+    {
+        return "ClassPojo [chapter = "+chapter+", verse = "+verse+", text = "+text+", titles = "+titles+", bookname = "+bookname+", title = "+title+"]";
     }
 }

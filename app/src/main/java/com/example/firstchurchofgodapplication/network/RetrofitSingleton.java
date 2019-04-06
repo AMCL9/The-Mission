@@ -21,7 +21,7 @@ public class RetrofitSingleton {
 
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl("https://getbible.net/")
+                    .baseUrl("https://labs.bible.org/")
                     .addConverterFactory(GsonConverterFactory.create())
                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .build();

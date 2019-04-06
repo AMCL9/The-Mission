@@ -12,34 +12,36 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.firstchurchofgodapplication.controller.FragmentListener;
 import com.example.firstchurchofgodapplication.network.RetrofitSingleton;
 
 import retrofit2.Retrofit;
 
 
 public class EntranceFragment extends Fragment {
-
+    private FragmentListener fragmentListener;
     private TextView textView;
     private Button button;
 
-
-    private static final String CHOICE = "param1";
+    private static final String BOOK = "param3";
+    private static final String CHAPTER = "param1";
     private static final String SCRIPTURE = "param2";
-
 
     private String getChoice;
     private String getScripture;
+    private String getBook;
 
-    private OnFragmentInteractionListener mListener;
+
 
     public EntranceFragment() {
-        // Required empty public constructor
+
     }
 
-    public static EntranceFragment newInstance(int choice, String scripture) {
+    public static EntranceFragment newInstance(String book, String chapter, String scripture) {
         EntranceFragment fragment = new EntranceFragment();
         Bundle args = new Bundle();
-        args.putInt(CHOICE, choice);
+        args.putString(BOOK, book);
+        args.putString(CHAPTER, chapter);
         args.putString(SCRIPTURE, scripture);
         fragment.setArguments(args);
         return fragment;
@@ -54,7 +56,7 @@ public class EntranceFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            getChoice = getArguments().getString(CHOICE);
+            getChoice = getArguments().getString(CHAPTER);
             getScripture = getArguments().getString(SCRIPTURE);
         }
     }
@@ -73,17 +75,12 @@ public class EntranceFragment extends Fragment {
 
     }
 
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+        if (context instanceof FragmentListener) {
+            fragmentListener = (FragmentListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -94,12 +91,9 @@ public class EntranceFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+        fragmentListener = null;
     }
 
 
-    public interface OnFragmentInteractionListener {
 
-        void onFragmentInteraction(Uri uri);
-    }
 }
