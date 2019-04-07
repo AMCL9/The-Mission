@@ -3,49 +3,59 @@ package com.example.firstchurchofgodapplication.devotionalmodel;
 import java.util.List;
 
 public class DevotionalResponse {
-    private String shouldEndSession;
-    private Reprompt reprompt;
-    private List<Directives> directives;
-    private String response;
-    private String version;
-    private Card card;
 
-    public DevotionalResponse(String shouldEndSession, Reprompt reprompt, List<Directives> directives, String response, String version, Card card) {
-        this.shouldEndSession = shouldEndSession;
-        this.reprompt = reprompt;
-        this.directives = directives;
-        this.response = response;
-        this.version = version;
-        this.card = card;
+    private String type;
+
+    private String title;
+
+    private String excerpt;
+
+    private Items[] items;
+
+    private String url;
+
+    public String getType() {
+        return type;
     }
 
-    public String getShouldEndSession() {
-        return shouldEndSession;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public Reprompt getReprompt() {
-        return reprompt;
+    public String getTitle() {
+        return title;
     }
 
-    public List<Directives> getDirectives() {
-        return directives;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getResponse() {
-        return response;
+    public String getExcerpt() {
+        return excerpt;
     }
 
-    public String getVersion() {
-        return version;
+    public void setExcerpt(String excerpt) {
+        this.excerpt = excerpt;
     }
 
-    public Card getCard() {
-        return card;
+    public Items[] getItems() {
+        return items;
     }
 
+    public void setItems(Items[] items) {
+        this.items = items;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "ClassPojo [type = " + type + ", title = " + title + ", excerpt = " + excerpt + ", items = " + items + ", url = " + url + "]";
     }
 }

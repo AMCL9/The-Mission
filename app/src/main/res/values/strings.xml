@@ -9,5 +9,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="scripture_text">This is the Scripture.</string>
     <string name="enter">ENTER</string>
+    <string name="devotional">Devotional</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

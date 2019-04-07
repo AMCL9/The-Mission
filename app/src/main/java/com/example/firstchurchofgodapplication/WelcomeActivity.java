@@ -1,8 +1,6 @@
 package com.example.firstchurchofgodapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +11,7 @@ import com.example.firstchurchofgodapplication.controller.ScriptureAdapter;
 import com.example.firstchurchofgodapplication.network.PassageService;
 import com.example.firstchurchofgodapplication.network.RetrofitSingleton;
 import com.example.firstchurchofgodapplication.scripturemodel.BibleResponse;
-import com.example.firstchurchofgodapplication.scripturemodel.Message;
+import com.example.firstchurchofgodapplication.view.MediaFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,16 +22,16 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class WelcomeActivity extends AppCompatActivity implements FragmentListener {
+
+    private final String TAG = "Retrofit Response";
+
     private RecyclerView scriptureRecyclerView;
     private ArrayList<BibleResponse> scriptures = new ArrayList<>();
     private ScriptureAdapter scriptureAdapter;
     private RecyclerView.LayoutManager layoutManager;
     FragmentListener fragmentListener;
     String passage;
-    private String book = "book";
-    private String chapter = "chapter";
-    private String verse = "verse";
-
+//    private String scripture = ScriptureViewHolder.itemViewScripture;
 
 
 
@@ -118,6 +116,7 @@ public class WelcomeActivity extends AppCompatActivity implements FragmentListen
 
                     @Override
                     public void onFailure(Call<List<BibleResponse>> call, Throwable t) {
+                        Log.d(TAG, "onFailure: "+ t.getMessage());
 
                     }
                 });
@@ -138,7 +137,7 @@ public class WelcomeActivity extends AppCompatActivity implements FragmentListen
 
                     @Override
                     public void onFailure(Call<List<BibleResponse>> call, Throwable t) {
-
+                        Log.d(TAG, "onFailure: "+ t.getMessage());
                     }
                 });
         retrofit5.create(PassageService.class)
@@ -158,6 +157,7 @@ public class WelcomeActivity extends AppCompatActivity implements FragmentListen
 
                     @Override
                     public void onFailure(Call<List<BibleResponse>> call, Throwable t) {
+                        Log.d(TAG, "onFailure: "+ t.getMessage());
 
                     }
                 });
@@ -178,6 +178,7 @@ public class WelcomeActivity extends AppCompatActivity implements FragmentListen
 
                     @Override
                     public void onFailure(Call<List<BibleResponse>> call, Throwable t) {
+                        Log.d(TAG, "onFailure: "+ t.getMessage());
 
                     }
                 });
@@ -198,6 +199,7 @@ public class WelcomeActivity extends AppCompatActivity implements FragmentListen
 
                     @Override
                     public void onFailure(Call<List<BibleResponse>> call, Throwable t) {
+                        Log.d(TAG, "onFailure: "+ t.getMessage());
 
                     }
                 });
@@ -218,6 +220,7 @@ public class WelcomeActivity extends AppCompatActivity implements FragmentListen
 
                     @Override
                     public void onFailure(Call<List<BibleResponse>> call, Throwable t) {
+                        Log.d(TAG, "onFailure: "+ t.getMessage());
 
                     }
                 });
@@ -238,6 +241,7 @@ public class WelcomeActivity extends AppCompatActivity implements FragmentListen
 
                     @Override
                     public void onFailure(Call<List<BibleResponse>> call, Throwable t) {
+                        Log.d(TAG, "onFailure: "+ t.getMessage());
 
                     }
                 });
@@ -259,19 +263,31 @@ public class WelcomeActivity extends AppCompatActivity implements FragmentListen
 
                     @Override
                     public void onFailure(Call<List<BibleResponse>> call, Throwable t) {
+                        t.printStackTrace();
+                        Log.d(TAG, "onFailure: "+ t.getMessage());
 
                     }
                 });
 
     }
 
-    @Override
-    public void showEntranceFragment(String text, String text1, String text2) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, EntranceFragment.newInstance(book,chapter,verse))
-                    .addToBackStack(null)
-                    .commit();
 
-        }
+    @Override
+    public void showEntranceFragment(String text, String bookText, String chapterText, String verseText, String scriptureText) {
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, EntranceFragment.newInstance(text, bookText, chapterText, verseText, scriptureText))
+                .addToBackStack(null)
+                .commit();
 
     }
+
+    @Override
+    public void showMediaFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, MediaFragment.newInstance())
+                .addToBackStack(null)
+                .commit();
+
+    }
+}

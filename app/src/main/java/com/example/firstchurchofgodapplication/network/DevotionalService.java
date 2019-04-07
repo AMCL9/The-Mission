@@ -8,6 +8,6 @@ import retrofit2.http.Query;
 
 public interface DevotionalService {
 
-    @GET("alexa.php")
-    Call<DevotionalResponse> getDevotionals (@Query("intent") String intent);
+    @GET("sermons.json")
+    Call<DevotionalResponse> getDevotionals ();
 }

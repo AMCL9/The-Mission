@@ -1,7 +1,6 @@
 package com.example.firstchurchofgodapplication.network;
 
 import com.example.firstchurchofgodapplication.scripturemodel.BibleResponse;
-import com.example.firstchurchofgodapplication.scripturemodel.Message;
 
 
 import java.util.List;
