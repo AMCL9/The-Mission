@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorLavender">#F6C9FF</color>
-    <color name="colorLavenderMuted">#80CD9BD1</color>
+    <color name="colorLavenderMuted">#CD9BD1</color>
+    <color name="colorLavenderMutedTransparent">#E8CD9BD1</color>
     <color name="colorLavenderDark">#3A3436</color>
     <color name="colorIndigoDark">#2F0136</color>
     <color name="colorMissionLogo">#474367</color>

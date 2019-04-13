@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <group
+     >
+        <item
+            android:id="@+id/jusjomar"
+            android:title="@string/jusjomarley"
+            >
+        </item>
+        <item
+            android:id="@+id/dude_notifications"
+            android:title="@string/dude_notifications">
+        </item>
+        <item
+            android:id="@+id/black_rose"
+            android:title="@string/black_rose">
+        </item>
+        <item
+            android:id="@+id/linked_in"
+            android:title="@string/linkedin">
+        </item>
+
+    </group>
+
+</menu>

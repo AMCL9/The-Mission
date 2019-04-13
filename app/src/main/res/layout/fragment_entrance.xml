@@ -4,69 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorLavenderMuted"
-    tools:context=".EntranceFragment">
+    android:background="@color/colorLavenderMutedTransparent"
+    tools:context=".EntranceFragment"
+    android:clickable="true">
 
     <TextView
-        android:id="@+id/scripture_book"
-        android:layout_width="0dp"
+        android:id="@+id/uniqueScripture"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="332dp"
-        android:layout_marginBottom="332dp"
-        android:text="@string/scripture_text"
+        android:textAlignment="viewStart"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/enter_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/scripture_chapter"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="332dp"
-        android:layout_marginBottom="332dp"
-        android:text="@string/scripture_text"
-        android:textSize="32sp"
+        android:textColor="@color/colorIndigoDark"
+        android:fontFamily="@font/amaticbold"
         app:layout_constraintBottom_toTopOf="@+id/enter_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/scripture_verse"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="332dp"
-        android:layout_marginBottom="332dp"
-        android:text="@string/scripture_text"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/enter_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/scripture_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="332dp"
-        android:layout_marginBottom="332dp"
-        android:text="@string/scripture_text"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/enter_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/enter_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/mostwasted"
-        android:text="@string/enter"
+        android:text="@string/devotional"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/uniqueScripture" />
 
 </android.support.constraint.ConstraintLayout>

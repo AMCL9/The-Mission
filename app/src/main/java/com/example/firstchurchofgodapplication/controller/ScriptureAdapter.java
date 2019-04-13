@@ -13,12 +13,14 @@ import java.util.ArrayList;
 
 public class ScriptureAdapter extends RecyclerView.Adapter<ScriptureViewHolder> {
 
+
     private ArrayList<BibleResponse> bibleResponses;
     FragmentListener fragmentListener;
 
     public ScriptureAdapter( ArrayList<BibleResponse>bibleResponses, FragmentListener fragmentlistener) {
         this.bibleResponses = bibleResponses;
     }
+
 
     @NonNull
     @Override

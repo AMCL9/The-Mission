@@ -31,7 +31,7 @@
         android:layout_alignTop="@id/first_church_splash"
         android:fontFamily="@font/mostwasted"
         android:includeFontPadding="true"
-        android:text="@string/first_church_of_god"
+        android:text="@string/teens_living_for_christ"
         android:textAlignment="gravity"
         android:textColor="@color/colorOffWhite"
         android:textSize="24sp"

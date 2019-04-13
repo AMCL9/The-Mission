@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".WelcomeActivity">
+
+
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar_layout"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/scripture_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="54dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/toolBar" />
 
 
 </android.support.constraint.ConstraintLayout>

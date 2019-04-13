@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Window;
 
 
-import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,13 +30,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }, SPLASH_TIME_OUT);
 
-    }
-
-
-    public int randomBookNumberGenerator() {
-        Random random = new Random();
-        int n = random.nextInt(80);
-        return n;
     }
 
 

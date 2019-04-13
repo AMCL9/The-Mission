@@ -29,15 +29,6 @@ public class RetrofitSingleton {
         return retrofit;
     }
 
-    public static Retrofit getInstance2() {
-        if( retrofit2 == null) {
 
-            retrofit2 = new Retrofit.Builder()
-                    .baseUrl("https://bibletalk.tv/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-        return retrofit2;
-    }
 }
 

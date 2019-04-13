@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolBar"
+    android:theme="@style/CustomActionBarTheme"
+    app:titleTextColor="@color/colorCanary"
+    app:titleTextAppearance="@font/mostwasted"
+    android:background="@color/colorMissionLogo"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:elevation="4dp"
+    android:popupTheme="@style/CustomActionBarTheme"
+
+    android:clickable="true"
+    android:focusable="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+

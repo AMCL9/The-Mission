@@ -5,9 +5,21 @@
     <string name="teens_living_christ">Teens Living for Christ</string>
     <string name="teens_living_for_christ">Teens Living for Christ</string>
     <string name="todo">TODO</string>
+    <string name="danger">stuff</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="scripture_text">This is the Scripture.</string>
     <string name="enter">ENTER</string>
+    <string name="devotional">Share Scripture</string>
+
+
+    <string name="the_mission_teens_living_for_christ">The Mission: Teens Living for Christ</string>
+    <string name="scriptures">Scriptures</string>
+    <string name="about_the_app">About The App</string>
+    <string name="ashley_lewis">Ashley Lewis</string>
+    <string name="jusjomarley">JusJoMarley</string>
+    <string name="dude_notifications">Dude Notifications</string>
+    <string name="black_rose">Black Rose</string>
+    <string name="linkedin">LinkedIn</string>
 
 </resources>
