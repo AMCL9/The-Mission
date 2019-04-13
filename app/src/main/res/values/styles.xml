@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomActionBarTheme"
+    parent="@android:style/Theme.Holo">
+        <item name="android:itemBackground">@color/colorMissionLogo</item>
+        <item name="android:fontFamily">@font/amaticbold</item>
+        <item name="android:textColor">@color/colorCanary</item>
+        <item name="android:textSize">24dp</item>
+        <item name="android:icon">@drawable/bible</item>
+
+
+
+</style>
+
 </resources>

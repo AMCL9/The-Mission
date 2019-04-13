@@ -1,6 +1,7 @@
 package com.example.firstchurchofgodapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,29 +14,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.firstchurchofgodapplication.controller.FragmentListener;
-import com.example.firstchurchofgodapplication.controller.ScriptureViewHolder;
-import com.example.firstchurchofgodapplication.devotionalmodel.DevotionalResponse;
-import com.example.firstchurchofgodapplication.devotionalmodel.Items;
-import com.example.firstchurchofgodapplication.network.DevotionalService;
-import com.example.firstchurchofgodapplication.network.RetrofitSingleton;
-import com.example.firstchurchofgodapplication.scripturemodel.BibleResponse;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 
 public class EntranceFragment extends Fragment {
-    private FragmentListener fragmentListener;
-    private List<DevotionalResponse> devotionals = new ArrayList<>();
+    FragmentListener fragmentListener;
     private TextView textView;
     private Button button;
+    private final String SMS_BODY = "sms_body";
 
 
     public static Bundle args = new Bundle();
@@ -54,6 +40,7 @@ public class EntranceFragment extends Fragment {
     private static String getBooktext;
     private static String getVersetext;
     private static String getScripturetext;
+
 
 
 
@@ -95,7 +82,7 @@ public class EntranceFragment extends Fragment {
         }
     }
 
-    //can be used as a non-logic test
+
     public static void checking(View view) {
         if (getScripture == null) {
             String toast = "hell naw to the naw naw naw";
@@ -114,7 +101,7 @@ public class EntranceFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
 
@@ -127,49 +114,11 @@ public class EntranceFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Retrofit retrofit = RetrofitSingleton.getInstance2();
-                retrofit.create(DevotionalService.class)
-                        .getDevotionals()
-                        .enqueue(new Callback<DevotionalResponse>() {
-                            @Override
-                            public void onResponse(Call<DevotionalResponse> call, Response<DevotionalResponse> response) {
-                                DevotionalResponse devotionalResponse = response.body();
-                                if (devotionalResponse != null) {
-                                    devotionals.add(devotionalResponse);
-                                    for (DevotionalResponse d : devotionals) {
-                                        if ((d.getExcerpt().contains(getBooktext) && d.getExcerpt().contains(getChaptertext)
-                                        || d.getExcerpt().contains(getScripturetext))) {
-                                        Items [] itemsArray = d.getItems();
-                                        for (Items item: itemsArray) {
-                                            if ((item.getHas_audio())||
-                                                    (item.getHas_text())||
-                                                    (item.getHas_video())) {
-                                                String url = item.getUrl();
-
-
-                                            }
-                                        }
-
-
-
-                                        }
-                                    }
-
-
-                                    fragmentListener.showMediaFragment();
-                                }
-                            }
-
-                            @Override
-                            public void onFailure(Call<DevotionalResponse> call, Throwable t) {
-                                Log.d("AMCL9", "onFailure: "+ t.getMessage());
-                            }
-                        });
-
+                buttonClickSaysGo();
             }
+
+
         });
-
-
     }
 
 
@@ -189,6 +138,15 @@ public class EntranceFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         fragmentListener = null;
+    }
+
+    public void buttonClickSaysGo (){
+        Intent sharingIntent = new Intent(Intent.ACTION_VIEW);
+        sharingIntent.setData(Uri.parse("sms:"));
+        sharingIntent.putExtra(SMS_BODY, getScripturetext);
+        startActivity(sharingIntent);
+
+
     }
 
 
