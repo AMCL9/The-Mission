@@ -1,6 +1,5 @@
 # The-Mission
 
-![The Mission Logo](file:///Users/al/Downloads/missionlogo.png)
 
 The Mission application is a tool for young people to remain connected to their faith as users are blessed with a new 
 scripture each time they refresh the application and can touch others with texts that especially resonate with the 
